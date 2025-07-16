@@ -1,0 +1,1 @@
+global.perguntaContinuar = false;
