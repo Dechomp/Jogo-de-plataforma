@@ -1,7 +1,7 @@
-#Jogo de Plataforma
+# Jogo de Plataforma
 
 Criando um jogo de plataforma
 
-#Plataform Game
+# Plataform Game
 
 Creating a plataform game
