@@ -8,7 +8,7 @@
 }*/
 if (global.perguntaContinuar) {
     // Mensagem
-    var msg = "Deseja continuar?\nS - Sim    N - Não";
+    var msg = "Deseja continuar?\nS - Sim    N - Nao";
 
     // Fonte (opcional: defina a sua fonte aqui, se quiser)
     // draw_set_font(fnt_dialogo);

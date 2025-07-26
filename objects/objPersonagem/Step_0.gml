@@ -79,22 +79,37 @@ if place_meeting(x, y+1, objParede) and (teclaPulo or teclaCima or setaCima){
 	var _xx = x + lengthdir_x(35, image_angle)
 	var y_offset = lengthdir_y(-90, image_angle)
 	
-	if teclaAtaque and global.cargas > 0 {
+	if teclaAtaque/* and global.cargas > 0 */{
 		
 		audio_play_sound(somCaminho, 1, 0)
 		
-		with (instance_create_layer(_xx, y - 35, "Ataque", objAtaque)){
-			global.cargas--
-			speed = 10
-			direction = -90 + 90 * other.image_xscale // Usar a outra imagem do objeto
-			image_angle =  direction
+		if setaBaixo or teclaBaixo{
+			_xx = x + lengthdir_x(0, image_angle)
+			with (instance_create_layer(_xx, y + 10, "Ataque", objAtaque)){
+				global.cargas--
+				speed = 20
+				direction = -180 + 90 * other.image_xscale // Usar a outra imagem do objeto no caso o player
+				image_angle =  direction
+			
+			}
+			
+			velVertical -= 8	
+		}
+		else{
+			with (instance_create_layer(_xx, y, "Ataque", objAtaque)){
+				global.cargas--
+				speed = 10
+				direction = -90 + 90 * other.image_xscale // Usar a outra imagem do objeto
+				image_angle =  direction	
+			}
 			
 		}
+		
 	}
 #endregion
 
 #region Mortes
-	if y < 0{
+	if y > room_height + 500 or y < -500{
 			instance_destroy()
 			global.perguntaContinuar = true;
 	}

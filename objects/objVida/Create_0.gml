@@ -1,0 +1,1 @@
+index_vida = 0;
