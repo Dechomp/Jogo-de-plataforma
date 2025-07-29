@@ -81,14 +81,14 @@ if place_meeting(x, y+1, objParede) and (teclaPulo or teclaCima or setaCima){
 	
 	if teclaAtaque/* and global.cargas > 0 */{
 		
-		audio_play_sound(somCaminho, 1, 0)
+		//audio_play_sound(somCaminho, 1, 0)
 		
 		if setaBaixo or teclaBaixo{
 			_xx = x + lengthdir_x(0, image_angle)
 			with (instance_create_layer(_xx, y + 10, "Ataque", objAtaque)){
 				global.cargas--
 				speed = 20
-				direction = -180 + 90 * other.image_xscale // Usar a outra imagem do objeto no caso o player
+				direction = -180 + 90 
 				image_angle =  direction
 			
 			}
